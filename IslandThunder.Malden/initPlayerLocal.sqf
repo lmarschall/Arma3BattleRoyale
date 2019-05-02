@@ -1,0 +1,1 @@
+player addAction ["Join Game Queue", { [player] call it_fnc_actionAppend }];

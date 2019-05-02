@@ -1,0 +1,55 @@
+class CfgFunctions
+{
+	class Island_Thunder
+	{
+		tag = "it";
+		
+		class Setups
+		{
+			file = "setups";
+			//class myFunction {file = "setup/do.sqf";};
+			class setupHelicopter {};
+			class setupPassenger {};
+			class setupPlayer {};
+			class setupGame {};
+			class setupWaypoints {};
+			class setupTown {};
+			class setupHouse {};
+			class setupZone {};
+		};
+		
+		class Actions
+		{
+			file = "actions";
+			//class myFunction {file = "setup/do.sqf";};
+			class actionCrash {};
+			class actionAppend {};
+			class shiftVector {};
+			class getVectorAngle {};
+			class checkPlayer {};
+			class checkPassenger {};
+		};
+		
+		class Events
+		{
+			file = "events";
+			//class myFunction {file = "setup/do.sqf";};
+			class eventKilled {};
+		};
+		
+		class Inits
+		{
+			file = "inits";
+			//class myFunction {file = "setup/do.sqf";};
+			class initPlayer {};
+		};
+		
+		class Configs
+		{
+			file = "configs";
+			class configHouses {};
+			class configWeapons {};
+			class configMagazines {};
+		};
+	};
+};
