@@ -1,3 +1,5 @@
+#include "dialogues\models.hpp"
+
 class CfgFunctions
 {
 	class Island_Thunder
@@ -29,6 +31,12 @@ class CfgFunctions
 			class checkPlayer {};
 			class checkPassenger {};
 		};
+
+		class Dialogues
+		{
+			file = "dialogues";
+			class setupWorkbench {};
+		}
 		
 		class Events
 		{
