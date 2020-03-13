@@ -1,3 +1,5 @@
+#include "defines.hpp"
+
 params [
     "", //Control
     ["_selection", 0, [0]]
@@ -5,9 +7,9 @@ params [
 
 _filter = _selection;
 
-_display = findDisplay 2000;
+_display = findDisplay WEAPON_SMITHING_DIALOG;
 
-_list = _display displayCtrl 2002;
+_list = _display displayCtrl WEAPON_SMITHING_LIST;
 
 lbClear _list;
 
@@ -46,7 +48,11 @@ switch (_filter) do {
 
 {
 	_class = _x;
-   	_list lbAdd str _class;
+	_name = getText(configFile >> "CfgWeapons" >> _class >> "displayName");
+	_image = getText(configFile >> "CfgWeapons" >> _class >> "picture");
+
+   	_list lbAdd _name;
 	_list lbSetData [(lbSize _list) - 1, _class];
+	_list lbSetPicture [(lbSize _list) - 1, _image];
 }
 forEach _compatibleItems;

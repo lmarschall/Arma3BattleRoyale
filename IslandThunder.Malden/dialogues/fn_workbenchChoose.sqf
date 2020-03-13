@@ -1,3 +1,5 @@
+#include "defines.hpp"
+
 _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
 

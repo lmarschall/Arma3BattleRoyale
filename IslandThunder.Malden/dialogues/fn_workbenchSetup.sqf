@@ -1,3 +1,4 @@
+#include "defines.hpp"
 
 // ADD THE FOLLOWING COMMAND TO WORKBENCH OBJECT
 // this addAction ["Open Workbench", { [_this select 0, _this select 1] call it_fnc_setupWorkbench }];
@@ -17,14 +18,14 @@ _flashlight = _items select 1;
 _optics = _items select 2;
 _bipod = _items select 3;
 
-hint str _items;
-
 _direction = getDir _workbench;
 
 // create empty weapon holder and fill with player weaopon
 holder = createVehicle ["Weapon_Empty", getPosATL _workbench, [], 0, "CAN_COLLIDE"];
 holder setDir _direction;
 holder addWeaponWithAttachmentsCargo [[_weapon, _muzzle, _flashlight, _optics, [], [], _bipod], 1];
+
+hint str holder;
 
 _camtarget = getPosATL holder;
 _camposition = [_camtarget select 0, _camtarget select 1, (_camtarget select 2) + 3];
@@ -41,13 +42,13 @@ _cam camCommit 0;
 
 // create dialog
 createDialog "Weapon_Smithing";
-waitUntil {!isNull (findDisplay 2000)};
+waitUntil {!isNull (findDisplay WEAPON_SMITHING_DIALOG)};
 
 // find dialog control
-_display = findDisplay 2000;
+_display = findDisplay WEAPON_SMITHING_DIALOG;
 
-_filter = _display displayCtrl 2001;
-_progress = _display displayCtrl 2003;
+// add filter menu entries
+_filter = _display displayCtrl WEAPON_SMITHING_FILTER;
 
 lbClear _filter;
 
@@ -56,14 +57,16 @@ _filter lbAdd "Flashlights";
 _filter lbAdd "Optics";
 _filter lbAdd "Bipods";
 
+// alter progress bar
+_progress = _display displayCtrl WEAPON_SMITHING_PROGRESS;
+
 _progress progressSetPosition 0.5;
 
-// find linked items
-
-
+// set data for the dialogue
+_filter lbSetData [0, "#1"];
 
 // wait till display is terminated, then exit camera view, clear weapon holder and reset the workbench
-waitUntil {isNull (findDisplay 2000)};
+waitUntil {isNull (findDisplay WEAPON_SMITHING_DIALOG)};
 _cam cameraEffect ["TERMINATE","BACK"];
 camDestroy _cam;
 clearWeaponCargo holder;
