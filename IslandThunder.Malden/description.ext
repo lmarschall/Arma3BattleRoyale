@@ -37,7 +37,9 @@ class CfgFunctions
 		class Dialogues
 		{
 			file = "dialogues";
-			class setupWorkbench {};
+			class workbenchSetup {};
+			class workbenchFilter {};
+			class workbenchChoose {};
 		}
 		
 		class Events

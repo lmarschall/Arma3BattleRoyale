@@ -8,10 +8,10 @@ class Weapon_Smithing {
 
 	class controls {
 
-		class RscListbox_1501: RscListbox
+		class RscListbox_1501: RscCombo
 		{
 			idc = 2001;
-			text = "1";
+			onLBSelChanged  = "_this call it_fnc_workbenchFilter";
 			x = 0.09625 * safezoneW + safezoneX;
 			y = 0.245 * safezoneH + safezoneY;
 			w = 0.23375 * safezoneW;
@@ -20,34 +20,15 @@ class Weapon_Smithing {
 		class RscListbox_1500: RscListbox
 		{
 			idc = 2002;
-			text = "2";
+			onLBSelChanged = "[_this] call it_fnc_workbenchChoose;";
 			x = 0.09625 * safezoneW + safezoneX;
 			y = 0.415 * safezoneH + safezoneY;
 			w = 0.23375 * safezoneW;
 			h = 0.136 * safezoneH;
 		};
-		class RscListbox_1502: RscListbox
-		{
-			idc = 2003;
-			text = "3";
-			x = 0.09625 * safezoneW + safezoneX;
-			y = 0.585 * safezoneH + safezoneY;
-			w = 0.23375 * safezoneW;
-			h = 0.136 * safezoneH;
-		};
-		class RscListbox_1503: RscListbox
-		{
-			idc = 2004;
-			text = "4";
-			x = 0.09625 * safezoneW + safezoneX;
-			y = 0.755 * safezoneH + safezoneY;
-			w = 0.23375 * safezoneW;
-			h = 0.136 * safezoneH;
-		};
 		class RscSlider_1900: RscProgress
 		{
-			idc = 2005;
-			text = "Slider";
+			idc = 2003;
 			x = 0.81875 * safezoneW + safezoneX;
 			y = 0.806 * safezoneH + safezoneY;
 			w = 0.085 * safezoneW;
@@ -55,7 +36,7 @@ class Weapon_Smithing {
 		};
 		class RscText_1000: RscText
 		{
-			idc = 2006;
+			idc = 2004;
 			text = "TITLE"; //--- ToDo: Localize;
 			x = 0.425625 * safezoneW + safezoneX;
 			y = 0.109 * safezoneH + safezoneY;
