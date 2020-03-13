@@ -5,7 +5,7 @@ _selection = (_this select 0) select 1;
 
 _data = _control lbData _selection;
 
-hint str _data;
+// hint str _data;
 
 _weapon = primaryWeapon player;
 _items = primaryWeaponItems player;

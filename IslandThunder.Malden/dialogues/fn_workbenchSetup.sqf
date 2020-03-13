@@ -25,20 +25,23 @@ holder = createVehicle ["Weapon_Empty", getPosATL _workbench, [], 0, "CAN_COLLID
 holder setDir _direction;
 holder addWeaponWithAttachmentsCargo [[_weapon, _muzzle, _flashlight, _optics, [], [], _bipod], 1];
 
-hint str holder;
+// hint str holder;
 
 _camtarget = getPosATL holder;
 _camposition = [_camtarget select 0, _camtarget select 1, (_camtarget select 2) + 3];
+
+// ["Paste",["Malden",[7278.8,7974.42,3.13884],90.2236,0.75,[-86.3876,0],0,0,726.84,0.3,0,1,0,1]] call bis_fnc_camera;
 
 // creates camera view on top of the workbench
 _cam = "CAMERA" camCreate _camposition;
 showCinemaBorder false; 
 _cam cameraEffect ["Internal", "Back"];
-_cam camSetDir (_camposition vectorFromTo _camtarget);
-_cam camSetFOV .33;
-// _cam setVectorDir (position player vectorFromTo _camtarget);
+_cam camSetDir [0.001,0,-1];
+_cam camSetFOV 0.5;
 _cam camSetFocus [50, 0]; 
 _cam camCommit 0;
+
+hint str direction _cam;
 
 // create dialog
 createDialog "Weapon_Smithing";
