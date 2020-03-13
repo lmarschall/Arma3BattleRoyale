@@ -7,7 +7,7 @@ private ["_position","_className", "_helicopter"];
 
 // Get Position to Spawn Helicopter
 //_position = [8066.08,10195.3,0.00144005];
-_position = [7652.47,9044.17,492.604];
+_position = getMarkerPos ["marker_heli", true];
 _className = "I_Heli_Transport_02_F";
 
 // Spawn Helicopter
