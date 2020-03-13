@@ -1,4 +1,6 @@
+#include "dialogues\default.hpp"
 #include "dialogues\models.hpp"
+#include "dialogues\weapon_smithing.hpp"
 
 class CfgFunctions
 {
