@@ -6,8 +6,13 @@ _auth_string = format ["Authorization: Bearer %1", access_token];
 
 _response = [_cliendid] call a3uf_common_fnc_clientRequest;
 
+_test = parseSimpleArray _response;
+_next = _test select 1;
+_u = _next select 0;
+_name = _u select 1;
+
+hint format["Hello %1", _name];
 
 diag_log "REQUEST";
 diag_log _auth_string ;
 diag_log _response;
-
