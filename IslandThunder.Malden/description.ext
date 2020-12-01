@@ -21,6 +21,14 @@ class CfgFunctions
 			class setupHouse {};
 			class setupZone {};
 		};
+
+		class Requests
+		{
+			file = "requests";
+			class handleAuthentication {};
+			class handleRequest {};
+		};
+			
 		
 		class Actions
 		{
