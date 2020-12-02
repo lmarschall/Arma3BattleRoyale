@@ -2,6 +2,33 @@
 #include "dialogues\models.hpp"
 #include "dialogues\weapon_smithing.hpp"
 
+class CfgRemoteExec
+{
+	class Functions
+	{
+		mode = 1;	// whitelist
+		jip = 0;	// JIP not allowed
+
+		class it_fnc_checkAuthentication
+		{
+			allowedTargets = 2;
+			jip = 0;
+		};
+		class it_fnc_saveAuthentication
+		{
+			allowedTargets = 1;
+			jip = 0;
+		};
+		// class BIS_fnc_effectKilledSecondaries		{ allowedTargets = 0; jip = 0; };
+		// class BIS_fnc_objectVar						{ allowedTargets = 0; jip = 0; };
+		// class BIS_fnc_setCustomSoundController		{ allowedTargets = 0; jip = 0; };
+
+/*
+		class BIS_fnc_debugConsoleExec				{ allowedTargets = 0; }; // allow debug console - optional
+*/
+	};
+};
+
 class CfgFunctions
 {
 	class Island_Thunder
@@ -26,6 +53,8 @@ class CfgFunctions
 		{
 			file = "requests";
 			class handleAuthentication {};
+			class checkAuthentication {};
+			class saveAuthentication {};
 			class handleRequest {};
 		};
 			
